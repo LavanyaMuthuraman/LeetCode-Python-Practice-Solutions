@@ -24,7 +24,7 @@ Time complexity: O(n^2)
 Space complexity: O(1) 
 '''
 
-Solution:
+#Solution:
 class Solution():
     def twoSum(self, nums, target):
         """
