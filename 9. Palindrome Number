@@ -1,0 +1,54 @@
+"""
+Problem:
+    Determine whether an integer is a palindrome. An integer is a palindrome 
+    when it reads the same backward as forward.
+    
+    Example:
+    Input: 121
+    Output: true
+    
+    Example:
+    Input: -121
+    Output: false
+    Explanation: From left to right, it reads -121. From right to left, 
+    it becomes 121-. Therefore it is not a palindrome.
+    
+
+Explanation:
+Approach
+Compare the string version of x with it's reverse if x is non-negative, otherwise return false. 
+Strings are lists of characters, so that allows me to apply the "pythonic" way of reversing lists on my stringified x.
+
+`[::-1]` is a slicing notation in Python used to reverse a sequence. Let me break it down:
+ 
+- The first colon `:` indicates the start of the slicing.
+- The second colon `:` indicates the end of the slicing.
+- The `-1` as the step value means to move through the sequence in reverse.
+ 
+So, `[::-1]` essentially means "start from the end and move towards the beginning, taking each element one by one.
+"""
+
+# Solution1: 
+# Converting int into string method:
+
+class Solution():
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x<0:
+            return False
+        y = str(x)
+        reversed = y[::-1]
+        return reversed == y 
+
+object = Solution()
+print(object.isPalindrome(101))  
+
+# Solution2:
+class Solution():
+    def isPalindrome(self, x):
+        return str(x) == str(x)[::-1]
+object = Solution()
+print(object.isPalindrome(10101))       
